@@ -11,7 +11,7 @@ public class UserUpperCase {
         for(int i = 0; i < variable.length(); i++){
             char character =variable.charAt(i);
             if(character == Character.toUpperCase(character)){
-                result += 1;
+                result++;
             }
         }
         System.out.println("You used " + result + " Uppercase letters!");

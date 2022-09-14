@@ -8,6 +8,10 @@ public class EmployeeSalaries {
     }
     public static void salaryCalculator(double basepay,int hours ){
         double salary = 0;
+        if(basepay < 8){
+            System.out.println("Base pay is too little!");
+            return;
+        }
         if(hours <= 40){
             salary = basepay * hours;
             System.out.println("The salary is : $" + String.format("%.2f",salary) );

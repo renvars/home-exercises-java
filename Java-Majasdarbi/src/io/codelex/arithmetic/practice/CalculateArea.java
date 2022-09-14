@@ -60,12 +60,13 @@ public class CalculateArea {
         // Get input from user
         Scanner keyboard = new Scanner(System.in);
         System.out.print("What is the circle's radius? ");
-        double radiusTest = keyboard.nextDouble();
-        while(radiusTest < 0){
+        BigDecimal radiusTest = keyboard.nextBigDecimal();
+        BigDecimal checkIfPositive = new BigDecimal(0);
+        while(radiusTest.compareTo(checkIfPositive) > 0){
             System.out.print("Can't use negative numbers! Circle Radius :");
-            radiusTest = keyboard.nextDouble();
+            radiusTest = keyboard.nextBigDecimal();
         }
-        radius = BigDecimal.valueOf(radiusTest);
+        radius = radiusTest;
 
 
         // Display output
@@ -82,22 +83,24 @@ public class CalculateArea {
 
         // Get length
         System.out.print("Enter length? ");
-        double lengthTest = keyboard.nextDouble();
-        length = BigDecimal.valueOf(lengthTest);
-        while(lengthTest < 0){
+        BigDecimal lengthTest = keyboard.nextBigDecimal();
+        BigDecimal checkIfPositive = new BigDecimal(0);
+        while(lengthTest.compareTo(checkIfPositive) > 0){
             System.out.print("Can't use negative numbers! Length :");
-            lengthTest = keyboard.nextDouble();
+            lengthTest = keyboard.nextBigDecimal();
         }
+        length = lengthTest;
 
         // Get width
         System.out.print("Enter width? ");
 
-        double widthTest = keyboard.nextDouble();
-        width = BigDecimal.valueOf(widthTest);
-        while(widthTest < 0){
+        BigDecimal widthTest = keyboard.nextBigDecimal();
+
+        while(widthTest.compareTo(checkIfPositive) > 0){
             System.out.print("Can't use negative numbers! Width :");
-            widthTest = keyboard.nextDouble();
+            widthTest = keyboard.nextBigDecimal();
         }
+        width = widthTest;
 
 
         // Display output
@@ -115,24 +118,24 @@ public class CalculateArea {
         // Get the base
         System.out.print("Enter length of the triangle's base? ");
 
-        double baseTest = keyboard.nextDouble();
-        base = BigDecimal.valueOf(baseTest);
-        while(baseTest < 0){
+        BigDecimal baseTest = keyboard.nextBigDecimal();
+        BigDecimal checkIfPositive = new BigDecimal(0);
+        while(baseTest.compareTo(checkIfPositive) > 0){
             System.out.print("Can't use negative numbers! Base :");
-            baseTest = keyboard.nextDouble();
+            baseTest = keyboard.nextBigDecimal();
         }
-        //base = keyboard.nextDouble();
+        base = baseTest;
 
         // Get the height
         System.out.print("Enter triangle's height? ");
 
         //height = keyboard.nextDouble();
-        double heightTest = keyboard.nextDouble();
-        height = BigDecimal.valueOf(heightTest);
-        while(heightTest < 0){
+        BigDecimal heightTest = keyboard.nextBigDecimal();
+        while(heightTest.compareTo(checkIfPositive) > 0){
             System.out.print("Can't use negative numbers! Height :");
-            heightTest = keyboard.nextDouble();
+            heightTest = keyboard.nextBigDecimal();
         }
+        height = heightTest;
         // Display the triangle's area.
         System.out.println("The triangle's area is "
                 + Geometry.areaOfTriangle(base, height));
