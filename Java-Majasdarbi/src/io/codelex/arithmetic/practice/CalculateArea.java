@@ -62,7 +62,7 @@ public class CalculateArea {
         System.out.print("What is the circle's radius? ");
         BigDecimal radiusTest = keyboard.nextBigDecimal();
         BigDecimal checkIfPositive = new BigDecimal(0);
-        while(radiusTest.compareTo(checkIfPositive) > 0){
+        while (radiusTest.compareTo(checkIfPositive) > 0) {
             System.out.print("Can't use negative numbers! Circle Radius :");
             radiusTest = keyboard.nextBigDecimal();
         }
@@ -85,7 +85,7 @@ public class CalculateArea {
         System.out.print("Enter length? ");
         BigDecimal lengthTest = keyboard.nextBigDecimal();
         BigDecimal checkIfPositive = new BigDecimal(0);
-        while(lengthTest.compareTo(checkIfPositive) > 0){
+        while (lengthTest.compareTo(checkIfPositive) > 0) {
             System.out.print("Can't use negative numbers! Length :");
             lengthTest = keyboard.nextBigDecimal();
         }
@@ -96,7 +96,7 @@ public class CalculateArea {
 
         BigDecimal widthTest = keyboard.nextBigDecimal();
 
-        while(widthTest.compareTo(checkIfPositive) > 0){
+        while (widthTest.compareTo(checkIfPositive) > 0) {
             System.out.print("Can't use negative numbers! Width :");
             widthTest = keyboard.nextBigDecimal();
         }
@@ -120,7 +120,7 @@ public class CalculateArea {
 
         BigDecimal baseTest = keyboard.nextBigDecimal();
         BigDecimal checkIfPositive = new BigDecimal(0);
-        while(baseTest.compareTo(checkIfPositive) > 0){
+        while (baseTest.compareTo(checkIfPositive) > 0) {
             System.out.print("Can't use negative numbers! Base :");
             baseTest = keyboard.nextBigDecimal();
         }
@@ -131,7 +131,7 @@ public class CalculateArea {
 
         //height = keyboard.nextDouble();
         BigDecimal heightTest = keyboard.nextBigDecimal();
-        while(heightTest.compareTo(checkIfPositive) > 0){
+        while (heightTest.compareTo(checkIfPositive) > 0) {
             System.out.print("Can't use negative numbers! Height :");
             heightTest = keyboard.nextBigDecimal();
         }

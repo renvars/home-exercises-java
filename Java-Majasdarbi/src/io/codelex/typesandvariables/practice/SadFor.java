@@ -12,8 +12,8 @@ public class SadFor {
             if (Math.sqrt(i) > 2.5)
                 return i;
 
-       }
-
+        }
+        
         throw new NoCodeWrittenException();
     }
 }

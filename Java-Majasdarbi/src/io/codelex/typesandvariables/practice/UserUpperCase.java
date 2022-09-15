@@ -8,9 +8,9 @@ public class UserUpperCase {
         System.out.print("Write a Sting : ");
         String variable = in.nextLine();
         int result = 0;
-        for(int i = 0; i < variable.length(); i++){
-            char character =variable.charAt(i);
-            if(character == Character.toUpperCase(character)){
+        for (int i = 0; i < variable.length(); i++) {
+            char character = variable.charAt(i);
+            if (character == Character.toUpperCase(character)) {
                 result++;
             }
         }

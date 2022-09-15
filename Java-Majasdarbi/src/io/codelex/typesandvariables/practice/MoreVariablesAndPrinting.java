@@ -11,6 +11,7 @@ public class MoreVariablesAndPrinting {
         String myTeeth = "White";
         String myHair = "Brown";
 
+
         System.out.println("Let's talk about " + myName + ".");
         System.out.println("He's " + myHeight + " inches tall.");
         System.out.println("He's " + myWeight + " pounds heavy.");
