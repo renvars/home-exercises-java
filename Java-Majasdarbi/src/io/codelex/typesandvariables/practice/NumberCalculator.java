@@ -9,10 +9,10 @@ public class NumberCalculator {
         Scanner in = new Scanner(System.in);
         ArrayList<Integer> allNumbers = new ArrayList<>();
 
-        while (true){
+        while (true) {
             System.out.print("Write a number: ");
             int number = in.nextInt();
-            if(number == 69){
+            if (number == 69) {
                 System.out.println("Stop Method Detected!");
                 break;
             }

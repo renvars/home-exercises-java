@@ -2,7 +2,7 @@ package io.codelex.typesandvariables.practice;
 
 public class VariablesAndNames {
     public static void main(String[] args) {
-
+        
         int cars = 100;
         int seatsInACar = 4;
         int drivers = 30;
