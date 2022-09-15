@@ -7,18 +7,18 @@ public class PrintDayInWord {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Choose a number of the week (1 - 7) : ");
         int weekday = scanner.nextInt();
-        if(weekday < 1 || weekday > 7){
+        if (weekday < 1 || weekday > 7) {
             System.out.print("Invalid number! Choose again : ");
             weekday = scanner.nextInt();
-            if(weekday < 1 || weekday > 7){
+            if (weekday < 1 || weekday > 7) {
                 System.out.print("Invalid number! Choose again : ");
                 weekday = scanner.nextInt();
-                if(weekday < 1 || weekday > 7){
+                if (weekday < 1 || weekday > 7) {
                     System.out.print("That's it, I'm out of patience! Bye.");
                 }
             }
-        }else{
-            switch (weekday){
+        } else {
+            switch (weekday) {
                 case 1 -> System.out.println("This is a Monday!");
                 case 2 -> System.out.println("This is a Tuesday!");
                 case 3 -> System.out.println("This is a Wednesday!");
@@ -31,7 +31,6 @@ public class PrintDayInWord {
 
 
     }
-
 
 
 }

@@ -5,11 +5,11 @@ import java.util.Scanner;
 
 public class RollTwoDice {
     public static void main(String[] args) {
-        Scanner in  = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
         System.out.print("Desired sum : ");
         int sum = in.nextInt();
         int currentSum = 0;
-        while (sum != currentSum){
+        while (sum != currentSum) {
             Random random = new Random();
             int firstDice = random.nextInt(6) + 1;
             int secondDice = random.nextInt(6) + 1;

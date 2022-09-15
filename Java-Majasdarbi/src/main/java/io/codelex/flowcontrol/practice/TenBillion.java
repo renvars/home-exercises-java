@@ -11,8 +11,6 @@ public class TenBillion {
 
         long n = in.nextLong();
 
-
-
         if (n < Long.MAX_VALUE) {
 
             if (n < 0) {

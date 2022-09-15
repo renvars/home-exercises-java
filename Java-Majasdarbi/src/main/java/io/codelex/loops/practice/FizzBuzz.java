@@ -10,20 +10,20 @@ public class FizzBuzz {
         System.out.print("Numbers to print : ");
         int printAmount = scanner.nextInt();
 
-        for(int i = 1; i <= printAmount; i++){
-            if(i % 3 == 0 && i % 5 == 0){
+        for (int i = 1; i <= printAmount; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
                 System.out.print("FizzBuzz");
-            }else if(i % 3 == 0){
+            } else if (i % 3 == 0) {
                 System.out.print("Fizz");
-            }else if(i % 5 == 0){
+            } else if (i % 5 == 0) {
                 System.out.print("Buzz");
-            }else{
+            } else {
                 System.out.print(i);
             }
 
-            if(i % 20 == 0){
+            if (i % 20 == 0) {
                 System.out.print("\n");
-            }else{
+            } else {
                 System.out.print(" ");
             }
         }

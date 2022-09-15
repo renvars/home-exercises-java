@@ -20,7 +20,7 @@ public class RandomNumberPositions {
         boolean foundIt = false;
 
         for (i = 0; i < integers.length; i++) {
-            if(i == searchFor){
+            if (i == searchFor) {
                 foundIt = true;
                 searchFor = integers[i];
                 break;
@@ -33,6 +33,7 @@ public class RandomNumberPositions {
             System.out.println(searchFor + " is not in the array");
         }
     }
+
     private static Integer[] randomIntegers(int n) {
         List<Integer> list = new ArrayList<>(n);
 

@@ -15,7 +15,7 @@ public class MultiplyByItself {
 
 
         for (int y = 0; y < n; y++) {
-          i *= i;
+            i *= i;
         }
         System.out.printf("The power result is %d!", i);
 

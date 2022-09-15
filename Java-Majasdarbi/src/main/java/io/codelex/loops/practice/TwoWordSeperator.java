@@ -15,11 +15,10 @@ public class TwoWordSeperator {
         int missingLength = totalLength - firstWord.length() - secondWord.length();
 
         System.out.print(firstWord);
-        for(int i = 0; i < missingLength; i++){
+        for (int i = 0; i < missingLength; i++) {
             System.out.print(".");
         }
         System.out.print(secondWord);
-
 
 
     }
