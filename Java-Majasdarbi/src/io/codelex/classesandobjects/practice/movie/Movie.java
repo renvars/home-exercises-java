@@ -4,9 +4,9 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Movie {
-    String title;
-    String studio;
-    String rating;
+    private String title;
+    private String studio;
+    private String rating;
 
     public Movie(String title, String studio, String rating) {
         this.title = title;
@@ -20,11 +20,12 @@ public class Movie {
         this.rating = "PG";
     }
 
-    public ArrayList<Movie> getPG(Movie[] movies) {
+    public static ArrayList<Movie> getPG(ArrayList<Movie> movies) {
         ArrayList<Movie> pgMovies = new ArrayList<>();
         for (Movie movie : movies) {
             if (movie.rating.equals("PG")) {
                 pgMovies.add(movie);
+                movie.printMovie();
             }
         }
         return pgMovies;

@@ -1,9 +1,9 @@
 package io.codelex.classesandobjects.practice.car;
 
 public class Car {
-    double startKilometers;
-    double endKilometers;
-    double liters;
+    private double startKilometers;
+    private double endKilometers;
+    private double liters;
 
     public Car(double startOdo, double endingOdo, double liters) {
         this.startKilometers = startOdo;
@@ -12,8 +12,21 @@ public class Car {
     }
 
     public double calculateConsumption() {
-        double distance = this.endKilometers - this.startKilometers;
-        double literPerKm = distance / this.liters;
-        return literPerKm;
+        double distance = endKilometers - startKilometers;
+        return liters / distance * 100;
+    }
+
+    public boolean gasHog() {
+        double fuel = calculateConsumption();
+        return fuel > 15;
+    }
+
+    public boolean economyCar() {
+        double fuel = calculateConsumption();
+        return fuel < 5;
+    }
+
+    public void fillUp(int mileage, double liters) {
+
     }
 }

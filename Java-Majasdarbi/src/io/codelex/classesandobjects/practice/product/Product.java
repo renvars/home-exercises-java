@@ -1,9 +1,9 @@
 package io.codelex.classesandobjects.practice.product;
 
 public class Product {
-    String name;
-    double price;
-    int amount;
+    private final String name;
+    private double price;
+    private int amount;
 
     public Product(String name, double priceAtStart, int amountAtStart) {
         this.name = name;
@@ -20,6 +20,6 @@ public class Product {
     }
 
     public void printProduct() {
-        System.out.println(this.name + ", price " + this.price + ", amount " + this.amount);
+        System.out.println(name + ", price " + price + ", amount " + amount);
     }
 }

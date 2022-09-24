@@ -1,5 +1,6 @@
 package io.codelex.arrays.practice;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Exercise1 {
@@ -22,46 +23,40 @@ public class Exercise1 {
                 "C++"
         };
         System.out.println("Original numeric array : ");
-        for (int i = 0; i < myArray1.length; i++) {
-            System.out.print(myArray1[i]);
-            if (i != myArray1.length - 1) {
-                System.out.print(",");
-            } else {
-                System.out.print("\n");
-            }
-        }
-
+        toStringArray(myArray1);
         Arrays.sort(myArray1);
         System.out.println("Sorted numeric array : ");
-        for (int j = 0; j < myArray1.length; j++) {
-            System.out.print(myArray1[j]);
-            if (j != myArray1.length - 1) {
-                System.out.print(",");
-            } else {
-                System.out.print("\n");
-            }
-        }
+        toStringArray(myArray1);
+        System.out.println("=".repeat(25));
         System.out.println("Original string array : ");
-        for (int y = 0; y < myArray2.length; y++) {
-            System.out.print(myArray2[y]);
-            if (y != myArray2.length - 1) {
-                System.out.print(",");
-            } else {
-                System.out.print("\n");
-            }
-        }
-
+        toStringArray(myArray2);
         Arrays.sort(myArray2);
         System.out.println("Sorted string array : ");
-        for (int x = 0; x < myArray2.length; x++) {
-            System.out.print(myArray2[x]);
-            if (x != myArray2.length - 1) {
-                System.out.print(",");
-            } else {
-                System.out.print("\n");
-            }
-        }
+        toStringArray(myArray2);
 
 
     }
+
+    public static void toStringArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i]);
+            if (i != array.length - 1) {
+                System.out.print(",");
+            } else {
+                System.out.print("\n");
+            }
+        }
+    }
+
+    public static void toStringArray(String[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i]);
+            if (i != array.length - 1) {
+                System.out.print(",");
+            } else {
+                System.out.print("\n");
+            }
+        }
+    }
+
 }

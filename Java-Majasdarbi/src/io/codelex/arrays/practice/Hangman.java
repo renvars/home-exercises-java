@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Hangman {
-    private static String[] words = {
+    private final static String[] words = {
             "captivate", "redeem", "grandmother", "go", "stamp", "raw", "market", "transmission",
             "coincidence", "evaluate", "lazy", "value", "kneel", "shed", "exit", "incongruous",
             "orgy", "sustain", "method", "harsh", "crown", "torture", "immune", "matter",
@@ -16,6 +16,9 @@ public class Hangman {
     public static void main(String[] args) {
         System.out.println("This is the Hangman!");
         playGame();
+        while (playAgain()) {
+            playGame();
+        }
     }
 
     public static void playGame() {
@@ -29,6 +32,7 @@ public class Hangman {
         while (guessed < 8) {
             if (checkIfWinner(word, guessedLetters)) {
                 System.out.println("We have a winner!");
+                break;
             }
             drawBoard(word, guessedLetters, missedLetters);
             System.out.print("Guess a letter : ");
@@ -85,19 +89,29 @@ public class Hangman {
     }
 
     public static boolean checkIfWinner(char[] word, ArrayList<Character> letters) {
-        int length = word.length;
+        int length = 0;
         for (Character chr : word) {
             for (Character letter : letters) {
                 if (chr == letter) {
-                    length--;
+                    length++;
                 }
             }
         }
-        if (length == 0) {
-            return true;
-        } else {
-            return false;
+        return length == word.length;
+    }
+
+    public static boolean playAgain() {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Want to playa gain (yes/no):");
+        String play = "no";
+        if (in.hasNextLine()) {
+            play = in.nextLine().toLowerCase();
         }
+        if (play.equals("yes")) {
+            return true;
+        }
+        System.out.println("Thanks for playing!");
+        return false;
     }
 
 
