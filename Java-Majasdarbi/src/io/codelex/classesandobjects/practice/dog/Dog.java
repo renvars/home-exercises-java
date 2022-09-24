@@ -3,10 +3,10 @@ package io.codelex.classesandobjects.practice.dog;
 import java.util.Objects;
 
 public class Dog {
-    String name;
-    String sex;
-    String father;
-    String mother;
+    private final String name;
+    private final String sex;
+    private String father;
+    private String mother;
 
     public Dog(String name, String sex) {
         this.name = name;
@@ -23,8 +23,7 @@ public class Dog {
 
 
     public String toString() {
-        System.out.println("Name : " + this.name + ", Sex : " + this.sex);
-        return null;
+        return "Name : " + this.name + ", Sex : " + this.sex;
     }
 
     public String fathersName() {

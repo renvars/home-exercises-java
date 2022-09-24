@@ -6,13 +6,13 @@ public class Exercise3 {
         int[] numbers = {20, 30, 25, 35, -16, 60, -100};
 
 
-        double sum = 0;
+        int sum = 0;
         for (int nr : numbers) {
             sum += nr;
         }
 
 
-        double average = sum / numbers.length;
+        int average = sum / numbers.length;
         System.out.println("Average value of the array elements is : " + average);
 
     }

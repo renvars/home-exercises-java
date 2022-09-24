@@ -29,6 +29,7 @@ public class DogTest {
         dogs.add(buster);
         for (int i = 1; i < dogs.size(); i++) {
             System.out.println("Father :" + dogs.get(i - 1).fathersName());
+            System.out.println("Father :" + dogs.get(i).fathersName());
             System.out.println("Same Mother :" + dogs.get(i).hasSameMother(dogs.get(i - 1)));
         }
 
