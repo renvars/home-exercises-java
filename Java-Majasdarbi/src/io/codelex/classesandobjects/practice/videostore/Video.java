@@ -1,13 +1,16 @@
 package io.codelex.classesandobjects.practice.videostore;
 
+import java.util.ArrayList;
+
 public class Video {
     String title;
-    boolean checkedOut;
+    boolean isCheckedOut = false;
+    ArrayList<Double> allRatings = new ArrayList<>();
     double averageRating;
-    double rating;
 
     public Video(String title, double averageRating) {
         this.title = title;
+        this.allRatings.add(averageRating);
         this.averageRating = averageRating;
     }
 
@@ -15,23 +18,27 @@ public class Video {
         this.title = title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void checkOutVideo() {
+        isCheckedOut = true;
     }
 
-    public void checkOut(boolean checkedOut) {
-        this.checkedOut = true;
+    public void returnVideo() {
+        isCheckedOut = false;
     }
 
-    public void returnVideo(boolean checkedOut) {
-        this.checkedOut = false;
+    public void receiveARating(double rating) {
+        allRatings.add(rating);
+        this.averageRating = averageRating(allRatings);
     }
 
-    public void setAverageRating(double averageRating) {
-        this.averageRating = averageRating;
-    }
+    private static double averageRating(ArrayList<Double> allRatings) {
+        double sum = 0;
+        for (Double rating : allRatings) {
+            sum += rating;
+        }
+        //calculateAverage
+        double average = sum / allRatings.size();
+        return Math.round(average * 100.0) / 100.0;
 
-    public void rateVideo(double rating) {
-        this.rating = rating;
     }
 }
