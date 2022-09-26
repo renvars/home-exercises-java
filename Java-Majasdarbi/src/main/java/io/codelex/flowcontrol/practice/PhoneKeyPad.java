@@ -79,7 +79,7 @@ public class PhoneKeyPad {
 
     }
 
-    public static boolean onlyLetters(String str) {
+    private static boolean onlyLetters(String str) {
         if (str == null) {
             return false;
         }

@@ -21,7 +21,7 @@ public class AsciiFigure {
         }
     }
 
-    public static void drawAscii(int towerHeight) {
+    private static void drawAscii(int towerHeight) {
         int nextStep = 8;
         int maxWidth = nextStep * (towerHeight - 1);
         for (int i = 0; i < towerHeight; i++) {

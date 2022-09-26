@@ -7,12 +7,12 @@ public class TwoWordSeperator {
         Scanner scanner = new Scanner(System.in);
 
 
-        int totalLength = 30;
+        final int TOTAL_LENGTH = 30;
         System.out.println("Enter first word:");
         String firstWord = scanner.next();
         System.out.println("Enter first word:");
         String secondWord = scanner.next();
-        int missingLength = totalLength - firstWord.length() - secondWord.length();
+        int missingLength = TOTAL_LENGTH - firstWord.length() - secondWord.length();
 
         System.out.print(firstWord);
         for (int i = 0; i < missingLength; i++) {
