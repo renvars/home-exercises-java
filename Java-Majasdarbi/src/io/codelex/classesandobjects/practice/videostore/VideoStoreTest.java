@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class VideoStoreTest {
     private static final int COUNT_OF_MOVIES = 3;
-    public static Video[] movies = new Video[COUNT_OF_MOVIES];
+    private static final VideoStore videoStore = new VideoStore();
 
     public static void main(String[] args) {
         final Scanner keyboard = new Scanner(System.in);
@@ -15,11 +15,8 @@ public class VideoStoreTest {
             System.out.println("Choose 1 to fill video store");
             System.out.println("Choose 2 to rent video (as user)");
             System.out.println("Choose 3 to return video (as user)");
-            System.out.println("Choose 4 to display all videos (as user)");
-            System.out.println("Choose 5 to display all available videos (as user)");
-            System.out.println("Choose 6 to display all rented videos (as user)");
-            System.out.println("Choose 7 to rate a video (as user)");
-
+            System.out.println("Choose 4 to rate a video (as user)");
+            System.out.println("Choose 5 to list available videos!");
             int n = keyboard.nextInt();
 
             switch (n) {
@@ -35,17 +32,10 @@ public class VideoStoreTest {
                     returnVideo(keyboard);
                     break;
                 case 4:
-                    displayAllMovies();
+                    rateVideo(keyboard);
                     break;
                 case 5:
-                    displayMovies(false);
-                    break;
-                case 6:
-                    displayMovies(true);
-                    break;
-                case 7:
-                    rateAMovie(keyboard);
-                    break;
+                    videoStore.listInventory();
                 default:
                     break;
             }
@@ -55,75 +45,39 @@ public class VideoStoreTest {
 
     private static void fillVideoStore(Scanner scanner) {
         for (int i = 0; i < COUNT_OF_MOVIES; i++) {
-            System.out.println("Enter movie name: ");
-            String movieName = scanner.nextLine();
-            Video movie = new Video(movieName);
-            movies[i] = movie;
+            System.out.println("Enter movie name");
+            String movieName = scanner.next();
+            System.out.println("Enter rating");
+            double rating = scanner.nextDouble();
+            videoStore.addVideo(movieName, rating);
         }
     }
 
     private static void rentVideo(Scanner scanner) {
-        System.out.println("All available movies - ");
-        displayMovies(false);
-        System.out.println("Name of movie you want to rent? :");
-        String movieName = scanner.nextLine();
-        for (Video movie : movies) {
-            if (movieName.equals(movie.title)) {
-                movie.checkedOut = true;
-                System.out.println("You rented - " + movie.title);
-                break;
-            }
+        System.out.println("Enter movie name");
+        String movieName = scanner.next();
+        boolean checkedOut = videoStore.checkOutVideo(movieName);
+        if (!checkedOut) {
+            System.out.println("Sorry this movie has been rented already!");
+        } else {
+            System.out.println(movieName + " has been rented out successfully!");
         }
-
     }
 
     private static void returnVideo(Scanner scanner) {
-        System.out.println("Rented movies - ");
-        displayMovies(true);
-        System.out.println("Name of movie you want to return? :");
-        String movieName = scanner.nextLine();
-        for (Video movie : movies) {
-            if (movieName.equals(movie.title)) {
-                movie.checkedOut = false;
-                System.out.println("You returned - " + movie.title);
-                break;
-            }
-        }
+        System.out.println("Enter movie name");
+        String movieName = scanner.next();
+        videoStore.returnVideo(movieName);
+        System.out.println(movieName + " has been returned successfully!");
+
     }
 
-    public static void displayMovies(boolean rented) {
-        StringBuilder rentableMovies = new StringBuilder();
-        for (Video movie : movies) {
-            if (rented && movie.checkedOut) {
-                rentableMovies.append(movie.title).append(" ");
-            } else if (!rented && !movie.checkedOut) {
-                rentableMovies.append(movie.title).append(" ");
-            }
-        }
-        System.out.println(rentableMovies);
-    }
-
-    public static void displayAllMovies() {
-        StringBuilder allMovies = new StringBuilder();
-        for (Video movie : movies) {
-            allMovies.append(movie);
-        }
-        System.out.println("All available movies - " + allMovies);
-    }
-
-    public static void rateAMovie(Scanner scanner) {
-        System.out.println("Rate movies - ");
-        displayAllMovies();
-        System.out.println("Name of movie you want to rate? :");
-        String movieName = scanner.nextLine();
-        System.out.println("Rating you want to give? :");
+    private static void rateVideo(Scanner scanner) {
+        System.out.println("Enter movie name");
+        String movieName = scanner.next();
+        System.out.println("Enter movie rating");
         double rating = scanner.nextDouble();
-        for (Video movie : movies) {
-            if (movieName.equals(movie.title)) {
-                movie.rating = rating;
-                System.out.println("You rated - " + movie.title + "with a rating of " + rating);
-                break;
-            }
-        }
+        videoStore.rateAVideo(movieName, rating);
+        System.out.println(movieName + " has been rated with " + rating);
     }
 }
