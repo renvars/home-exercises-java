@@ -20,27 +20,7 @@ public class TenBillion {
             if (numberLength >= 11) {
                 System.out.println("Number is greater or equals 10,000,000,000!");
             } else {
-                int digits = 1;
-                if (numberLength == 2) {
-                    digits = 2;
-                } else if (numberLength == 3) {
-                    digits = 3;
-                } else if (numberLength == 4) {
-                    digits = 4;
-                } else if (numberLength == 5) {
-                    digits = 5;
-                } else if (numberLength == 6) {
-                    digits = 6;
-                } else if (numberLength == 7) {
-                    digits = 7;
-                } else if (numberLength == 8) {
-                    digits = 8;
-                } else if (numberLength == 9) {
-                    digits = 9;
-                } else if (numberLength == 10) {
-                    digits = 10;
-                }
-                System.out.println("Number of digits in the number: " + digits);
+                System.out.println("Number of digits in the number: " + numberLength);
             }
         } else {
             System.out.println("The number is not a long");

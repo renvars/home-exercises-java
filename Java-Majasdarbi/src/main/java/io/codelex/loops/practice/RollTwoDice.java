@@ -11,10 +11,14 @@ public class RollTwoDice {
         int currentSum = 0;
         while (sum != currentSum) {
             Random random = new Random();
-            int firstDice = random.nextInt(6) + 1;
-            int secondDice = random.nextInt(6) + 1;
+            int firstDice = rollDice(random);
+            int secondDice = rollDice(random);
             currentSum = firstDice + secondDice;
             System.out.println(firstDice + " and " + secondDice + " = " + currentSum);
         }
+    }
+
+    private static int rollDice(Random random) {
+        return random.nextInt(6) + 1;
     }
 }
