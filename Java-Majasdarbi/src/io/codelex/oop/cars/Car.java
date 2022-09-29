@@ -2,14 +2,15 @@ package io.codelex.oop.cars;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Car {
-    private final String name;
-    private final String model;
+    private String name;
+    private String model;
     private int price;
-    private final LocalDate yearOfManufacturer;
+    private LocalDate yearOfManufacturer;
     private ArrayList<Manufacturer> manufacturers;
-    private final Engines engine;
+    private Engines engine;
 
     public Car(String name, String model, int price, LocalDate yearOfManufacturer, ArrayList<Manufacturer> manufacturers, Engines engine) {
         this.name = name;
@@ -20,6 +21,23 @@ public class Car {
         this.engine = engine;
     }
     //GETTERS AND SETTERS
+
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setYearOfManufacturer(LocalDate yearOfManufacturer) {
+        this.yearOfManufacturer = yearOfManufacturer;
+    }
+
+    public void setEngine(Engines engine) {
+        this.engine = engine;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
 
     public void setPrice(int price) {
         this.price = price;
@@ -64,5 +82,18 @@ public class Car {
         }
         res.append("}\n");
         return res.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return price == car.price && name.equals(car.name) && model.equals(car.model) && yearOfManufacturer.equals(car.yearOfManufacturer) && manufacturers.equals(car.manufacturers) && engine == car.engine;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, model, price, yearOfManufacturer, manufacturers, engine);
     }
 }

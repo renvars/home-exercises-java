@@ -73,6 +73,9 @@ public class TestCarService {
             case 3:
                 carService.listAllCars(carService.getCars());
                 break;
+            case 12:
+                equalityChecker();
+                break;
 
         }
         return true;
@@ -93,6 +96,7 @@ public class TestCarService {
         System.out.println("Type '9' to see if a specific car is here,");
         System.out.println("Type '10' to see a specific manufacturers cars,");
         System.out.println("Type '11' to see cars made by manufacturers in respect to a year,");
+        System.out.println("Type '12' to check two car equality before and after changes,");
     }
 
     public static Car createRandomCar() {
@@ -137,5 +141,16 @@ public class TestCarService {
         return result;
     }
 
-    ;
+    public static void equalityChecker() {
+        Car car1 = createRandomCar();
+        Car car2 = new Car(car1.getName(), car1.getModel(), 10000, car1.getYearOfManufacturer(), car1.getManufacturers(), car1.getEngine());
+        System.out.println(car1);
+        System.out.println(car2);
+        System.out.println("<><><><><>ONLY PRICE CHANGES<><><><>");
+        System.out.println("===========BEFORE CHANGE===========");
+        System.out.println("Is equal? : " + car1.equals(car2));
+        car2.setPrice(car1.getPrice());
+        System.out.println("============AFTER CHANGE===========");
+        System.out.println("Is equal? : " + car1.equals(car2));
+    }
 }
