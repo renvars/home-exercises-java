@@ -9,5 +9,6 @@ public class ListWithoutGenerics {
         list.add("CODELEX");
         String s = (String) list.get(0);
         // we need to cast :( why?
+        //Because List type is not defined!
     }
 }

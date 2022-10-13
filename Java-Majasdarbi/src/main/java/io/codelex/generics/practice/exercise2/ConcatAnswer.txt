@@ -1,0 +1,8 @@
+1st question:
+    Well it was consistent since it will check of the type of data that is there.
+    A wildcard <?> from my understanding means that the list could by of any type BUT it has to be the same, so when checking
+    for the first element it can be easily found which Type it is.
+2nd question:
+    If there was no wildcard then I could do that but it would be repetitive and would take some time to create.
+    If there was a wildcard for the data (for example from another method) then I would not be able to cast it to the
+    correct Type!

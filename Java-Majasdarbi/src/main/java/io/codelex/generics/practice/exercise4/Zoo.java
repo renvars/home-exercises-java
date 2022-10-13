@@ -2,7 +2,7 @@ package io.codelex.generics.practice.exercise4;
 
 class Zoo {
     void feedAnimal(Cage cage) {
-        /*code given in each section*/
+
     }
 
     <F extends Food> void feed(F food, Animal<F> animal) {
@@ -10,6 +10,7 @@ class Zoo {
     }
 
     void manage() {
-        /*your code here*/
+        Cage cage = new Cage(new Wolf());
+        
     }
 }
