@@ -3,6 +3,7 @@ package io.codelex.streams.practice;
 import com.sun.source.tree.BreakTree;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.function.BiConsumer;
 import java.util.function.BinaryOperator;
@@ -33,7 +34,6 @@ public class CharacterToStringCollector implements Collector<Character, StringBu
 
     @Override
     public Set<Characteristics> characteristics() {
-        Set<Characteristics> EmptySet = Collections.<Characteristics>emptySet();
-        return EmptySet;
+        return new HashSet<>();
     }
 }
