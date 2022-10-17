@@ -1,6 +1,8 @@
 # Default ignored files
+/pom.xml/
 /shelf/
 /workspace.xml
+/Java-Majasdarbi.iml/
 # Editor-based HTTP Client requests
 /httpRequests/
 # Datasource local storage ignored files
