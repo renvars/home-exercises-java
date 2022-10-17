@@ -10,8 +10,8 @@ public class TestExercise2 {
     @Test
     public void testBasketRemoveAndAdd() {
         ArrayList<Mushroom> testList = new ArrayList<>();
-        Mushroom m1 = new Mushroom("1");
-        Mushroom m2 = new Mushroom("99");
+        Mushroom m1 = new Mushroom();
+        Mushroom m2 = new Mushroom();
         testList.add(m1);
         Basket<Mushroom> basket = new Basket<>(testList);
         basket.addToBasket(m2);
@@ -24,7 +24,7 @@ public class TestExercise2 {
     public void emptyException() {
         Basket<Apple> basket = new Basket<>();
         BasketEmptyException exception = Assertions.assertThrows(BasketEmptyException.class, () -> {
-            basket.removeFromBasket(new Apple("10"));
+            basket.removeFromBasket(new Apple());
         });
     }
 
@@ -32,11 +32,11 @@ public class TestExercise2 {
     public void fullException() {
         ArrayList<Apple> testList = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            testList.add(new Apple("10"));
+            testList.add(new Apple());
         }
         Basket<Apple> basket = new Basket<>(testList);
         BasketFullException exception = Assertions.assertThrows(BasketFullException.class, () -> {
-            basket.addToBasket(new Apple("10"));
+            basket.addToBasket(new Apple());
         });
     }
 

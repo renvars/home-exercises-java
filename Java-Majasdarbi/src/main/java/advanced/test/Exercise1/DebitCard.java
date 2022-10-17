@@ -9,7 +9,6 @@ public class DebitCard extends Card {
 
     @Override
     void withdrawMoney(int amount) {
-        checkCCV();
         warning(amount);
         int balance = getBalance();
         setBalance(balance - amount);
@@ -17,7 +16,6 @@ public class DebitCard extends Card {
 
     @Override
     void depositMoney(int amount) {
-        checkCCV();
         int balance = getBalance();
         if (balance + amount > 10_000) {
             System.out.println("Warning:Too much money");

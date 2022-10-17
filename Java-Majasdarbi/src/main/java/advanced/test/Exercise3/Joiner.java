@@ -13,9 +13,9 @@ public class Joiner {
 
     @SafeVarargs
     public final <T> String join(T... items) {
-        String res = Arrays.stream(items)
-                .map(i -> i.toString() + separator)
-                .collect(Collectors.joining());
-        return res.substring(0, res.length() - separator.length());
+        return Arrays.stream(items)
+                .map(Object::toString)
+                .collect(Collectors.joining(separator));
+
     }
 }

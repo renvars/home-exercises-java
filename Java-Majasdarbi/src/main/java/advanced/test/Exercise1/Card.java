@@ -26,12 +26,7 @@ public abstract class Card {
     }
 
     ;
-
-    public void checkCCV() {
-        if (getCCV().length() != 3 || getCCV().charAt(0) != '0') {
-            throw new CCVException("Fix the CCV!");
-        }
-    }
+    
 
     abstract void withdrawMoney(int amount);
 

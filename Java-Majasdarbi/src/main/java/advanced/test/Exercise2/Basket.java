@@ -26,10 +26,10 @@ public class Basket<E> {
     }
 
     public void removeFromBasket(E element) {
-        if (getCount() == 0) {
-            throw new BasketEmptyException("Basket is empty!");
+        if (elements.size() == 0) {
+            throw new BasketEmptyException("Basket is Empty!");
         }
-        elements.removeIf(e -> e.equals(element));
+        elements.remove(element);
         setCount(getCount() - 1);
     }
     //GETTERS AND SETTERS

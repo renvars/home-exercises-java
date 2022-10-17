@@ -16,8 +16,11 @@ public class FileReaderAndSaver {
     }
 
     public static void writeFile(String str) {
+        String[] name = "src/main/java/advanced/test/Exercise4/someText.txt".split("/");
+        String finalName = reverseString(name[name.length - 1].split("\\.")[0]);
+
         try {
-            FileWriter fileWriter = new FileWriter("src/main/java/advanced/test/Exercise4/newText.txt");
+            FileWriter fileWriter = new FileWriter("src/main/java/advanced/test/Exercise4/" + finalName + ".txt");
             fileWriter.write(str);
             fileWriter.close();
         } catch (IOException e) {

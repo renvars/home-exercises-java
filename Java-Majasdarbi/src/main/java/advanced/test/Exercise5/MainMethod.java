@@ -2,6 +2,7 @@ package advanced.test.Exercise5;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class MainMethod {
     public static void main(String[] args) {
@@ -14,8 +15,8 @@ public class MainMethod {
         System.out.println(evenPercent); //Should print out 0.5 because 50% of numbers are even
     }
 
-    public static <T> double partOf(List<T> list, TheMethod<T> method) {
-        double count = list.stream().filter(method::myMethod).count();
+    public static <T> double partOf(List<T> list, Predicate<T> method) {
+        double count = list.stream().filter(method).count();
         return count / list.size();
     }
 }

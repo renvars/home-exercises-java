@@ -22,9 +22,9 @@ public class TestExercise3 {
     @Test
     public void mixOfTypes() {
         Joiner joiner = new Joiner("---");
-        Object[] someTypes = {"Morgoth", 5, new Apple("1000"), 99999, new BigDecimal("420")};
+        Object[] someTypes = {"Morgoth", 5, 99999, new BigDecimal("420")};
         String res = joiner.join(someTypes);
-        String expected = "Morgoth---5---Apple{id=1000}---99999---420";
+        String expected = "Morgoth---5---99999---420";
         Assertions.assertEquals(expected, res);
     }
 }

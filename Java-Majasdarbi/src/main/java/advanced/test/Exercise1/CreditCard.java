@@ -8,7 +8,7 @@ public class CreditCard extends Card {
 
     @Override
     void withdrawMoney(int amount) {
-        checkCCV();
+        ;
         warning(amount);
         int balance = getBalance();
         if (balance - amount < 100) {
@@ -19,7 +19,6 @@ public class CreditCard extends Card {
 
     @Override
     void depositMoney(int amount) {
-        checkCCV();
         int balance = getBalance();
         setBalance(balance + amount);
     }
