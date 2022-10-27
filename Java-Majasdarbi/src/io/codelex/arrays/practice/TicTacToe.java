@@ -24,7 +24,7 @@ public class TicTacToe {
         System.out.println("   0 1 2");
     }
 
-    public static void play() {
+    private static void play() {
         initBoard();
         displayBoard(board);
         Scanner keyboard = new Scanner(System.in);
@@ -72,23 +72,11 @@ public class TicTacToe {
     }
 
     public static boolean checkWinner(char[][] moveArray, char player) {
-        if (moveArray[0][0] == player && moveArray[0][1] == player && moveArray[0][2] == player) {
-            return true;
-        }
-        if (moveArray[1][0] == player && moveArray[1][1] == player && moveArray[1][2] == player) {
-            return true;
-        }
-        if (moveArray[2][0] == player && moveArray[2][1] == player && moveArray[2][2] == player) {
-            return true;
-        }
-        if (moveArray[0][0] == player && moveArray[1][1] == player && moveArray[2][2] == player) {
-            return true;
-        }
-        if (moveArray[0][2] == player && moveArray[1][1] == player && moveArray[2][0] == player) {
-            return true;
-        }
-
-        return false;
+        return (moveArray[0][0] == player && moveArray[0][1] == player && moveArray[0][2] == player) ||
+                (moveArray[1][0] == player && moveArray[1][1] == player && moveArray[1][2] == player) ||
+                (moveArray[2][0] == player && moveArray[2][1] == player && moveArray[2][2] == player) ||
+                (moveArray[0][0] == player && moveArray[1][1] == player && moveArray[2][2] == player) ||
+                (moveArray[0][2] == player && moveArray[1][1] == player && moveArray[2][0] == player);
 
     }
 
