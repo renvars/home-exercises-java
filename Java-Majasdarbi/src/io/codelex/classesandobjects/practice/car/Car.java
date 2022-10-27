@@ -4,6 +4,7 @@ public class Car {
     private double startKilometers;
     private double endKilometers;
     private double liters;
+    public static final int GAS_HOG_CONSUMPTION = 15;
 
     public Car(double startOdo, double endingOdo, double liters) {
         this.startKilometers = startOdo;
@@ -18,7 +19,7 @@ public class Car {
 
     public boolean gasHog() {
         double fuel = calculateConsumption();
-        return fuel > 15;
+        return fuel > Car.GAS_HOG_CONSUMPTION;
     }
 
     public boolean economyCar() {
