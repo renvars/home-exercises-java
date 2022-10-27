@@ -2,6 +2,7 @@ package io.codelex.classesandobjects.practice.gaugeandodo;
 
 public class FuelGauge {
     private int liters;
+    public static final int MAX_FUEL_CAPACITY = 70;
 
     public FuelGauge(int liters) {
         this.liters = liters;
@@ -12,7 +13,7 @@ public class FuelGauge {
     }
 
     public void incrementLiters() {
-        if (this.liters < 70) {
+        if (this.liters < FuelGauge.MAX_FUEL_CAPACITY) {
             this.liters++;
         }
     }
