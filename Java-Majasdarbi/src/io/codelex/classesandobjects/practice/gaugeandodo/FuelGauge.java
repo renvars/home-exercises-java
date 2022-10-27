@@ -1,7 +1,7 @@
 package io.codelex.classesandobjects.practice.gaugeandodo;
 
 public class FuelGauge {
-    int liters;
+    private int liters;
 
     public FuelGauge(int liters) {
         this.liters = liters;

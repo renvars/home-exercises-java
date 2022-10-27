@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Hangman {
-    private final static String[] words = {
+    private final static String[] WORDS = {
             "captivate", "redeem", "grandmother", "go", "stamp", "raw", "market", "transmission",
             "coincidence", "evaluate", "lazy", "value", "kneel", "shed", "exit", "incongruous",
             "orgy", "sustain", "method", "harsh", "crown", "torture", "immune", "matter",
@@ -24,8 +24,8 @@ public class Hangman {
     public static void playGame() {
         Scanner in = new Scanner(System.in);
         Random random = new Random();
-        int index = random.nextInt(words.length);
-        char[] word = words[index].toCharArray();
+        int index = random.nextInt(WORDS.length);
+        char[] word = WORDS[index].toCharArray();
         ArrayList<Character> guessedLetters = new ArrayList<>();
         ArrayList<Character> missedLetters = new ArrayList<>();
         int guessed = 0;
@@ -79,7 +79,7 @@ public class Hangman {
         System.out.print("\n");
     }
 
-    public static boolean checkIfContainsLetter(char[] word, char letter) {
+    private static boolean checkIfContainsLetter(char[] word, char letter) {
         for (Character chr : word) {
             if (chr == letter) {
                 return true;
