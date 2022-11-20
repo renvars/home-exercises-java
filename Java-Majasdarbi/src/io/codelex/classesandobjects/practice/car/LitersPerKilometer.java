@@ -7,26 +7,26 @@ public class LitersPerKilometer {
         Scanner scan = new Scanner(System.in);
 
 
-        Car firstCar = getReading(scan);
-        Car secondCar = getReading(scan);
+        Car firstCar = newCar(scan);
+        Car secondCar = newCar(scan);
+        firstCar.fillUp(1000, 5);
         System.out.printf("First cars Kilometers per liter are %.2f \n", firstCar.calculateConsumption());
         fuelEconomy(firstCar);
+        secondCar.fillUp(1000, 1000);
+
         System.out.printf("Second cars Kilometers per liter are %.2f \n", secondCar.calculateConsumption());
         fuelEconomy(secondCar);
     }
 
-    public static Car getReading(Scanner scan) {
-        double startKilometers, endKilometers, liters;
 
-        System.out.print("Enter first reading: ");
+    public static Car newCar(Scanner scan) {
+        double startKilometers;
+
+        System.out.print("Enter startReading reading: ");
         startKilometers = scan.nextDouble();
 
-        System.out.print("Enter second reading: ");
-        endKilometers = scan.nextDouble();
+        return new Car(startKilometers);
 
-        System.out.print("Enter liters consumed: ");
-        liters = scan.nextDouble();
-        return new Car(startKilometers, endKilometers, liters);
     }
 
     public static void fuelEconomy(Car car) {

@@ -3,12 +3,13 @@ package io.codelex.classesandobjects.practice.car;
 public class Car {
     private double startKilometers;
     private double endKilometers;
-    private double liters;
 
-    public Car(double startOdo, double endingOdo, double liters) {
+    private double liters = 0;
+    public static final int GAS_HOG_CONSUMPTION = 15;
+
+    public Car(double startOdo) {
         this.startKilometers = startOdo;
-        this.endKilometers = endingOdo;
-        this.liters = liters;
+
     }
 
     public double calculateConsumption() {
@@ -18,7 +19,9 @@ public class Car {
 
     public boolean gasHog() {
         double fuel = calculateConsumption();
-        return fuel > 15;
+
+        return fuel > Car.GAS_HOG_CONSUMPTION;
+
     }
 
     public boolean economyCar() {
@@ -27,6 +30,7 @@ public class Car {
     }
 
     public void fillUp(int mileage, double liters) {
-
+        this.endKilometers = mileage + this.startKilometers;
+        this.liters += liters;
     }
 }
