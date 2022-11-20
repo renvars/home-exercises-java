@@ -1,0 +1,9 @@
+Simple list is created as an object at first and then its limitations are quite small.
+Probably should have done it a little different!
+-Abstract classes
+    1.The plus side is that with enough of the classes very single Object type could be implemented
+    to work right .
+    2.The downside is that would mean that I would have to make a bunch of different classes for all th Types.
+-Generic types
+    1.The upside is that I can make one class that can take in any type of Object and return a good value.
+    2.The downside is that it requires some necessary casting that could lead to problems!

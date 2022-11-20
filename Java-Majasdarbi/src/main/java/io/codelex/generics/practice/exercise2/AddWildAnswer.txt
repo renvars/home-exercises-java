@@ -1,0 +1,9 @@
+1st Question:
+    If we don't know the type of list then we can not add to it! Since it's a wildcard
+    then it's not determined. Only null ca be added to the list.
+2nd Question:
+    The answer is below but using the wildcard super restriction is less restrictive than the generic method!
+    Example :
+        addAllX Wildcard super would work if provided list (v) would be of type Integer and we would like to add to a
+        list of Numbers! Since Integer (and Double, Long etc) is a subclass we can do that
+        In the other case of addAllY that would not work since they have to be of the same Type in this case Integer
