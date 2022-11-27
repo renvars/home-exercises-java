@@ -31,6 +31,8 @@ public class Dog {
     }
 
     public boolean hasSameMother(Dog otherDog) {
+
         return this.mother.equals(otherDog.mother);
+
     }
 }

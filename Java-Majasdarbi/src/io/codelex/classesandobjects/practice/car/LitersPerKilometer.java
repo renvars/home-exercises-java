@@ -13,9 +13,11 @@ public class LitersPerKilometer {
         System.out.printf("First cars Kilometers per liter are %.2f \n", firstCar.calculateConsumption());
         fuelEconomy(firstCar);
         secondCar.fillUp(1000, 1000);
+
         System.out.printf("Second cars Kilometers per liter are %.2f \n", secondCar.calculateConsumption());
         fuelEconomy(secondCar);
     }
+
 
     public static Car newCar(Scanner scan) {
         double startKilometers;
@@ -24,6 +26,7 @@ public class LitersPerKilometer {
         startKilometers = scan.nextDouble();
 
         return new Car(startKilometers);
+
     }
 
     public static void fuelEconomy(Car car) {

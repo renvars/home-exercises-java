@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class Hangman {
     private final static String[] WORDS = {
+
             "captivate", "redeem", "grandmother", "go", "stamp", "raw", "market", "transmission",
             "coincidence", "evaluate", "lazy", "value", "kneel", "shed", "exit", "incongruous",
             "orgy", "sustain", "method", "harsh", "crown", "torture", "immune", "matter",
@@ -78,6 +79,7 @@ public class Hangman {
         }
         System.out.print("\n");
     }
+
 
     private static boolean checkIfContainsLetter(char[] word, char letter) {
         for (Character chr : word) {

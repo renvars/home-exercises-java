@@ -3,6 +3,7 @@ package io.codelex.classesandobjects.practice.car;
 public class Car {
     private double startKilometers;
     private double endKilometers;
+
     private double liters = 0;
     public static final int GAS_HOG_CONSUMPTION = 15;
 
@@ -18,7 +19,9 @@ public class Car {
 
     public boolean gasHog() {
         double fuel = calculateConsumption();
+
         return fuel > Car.GAS_HOG_CONSUMPTION;
+
     }
 
     public boolean economyCar() {

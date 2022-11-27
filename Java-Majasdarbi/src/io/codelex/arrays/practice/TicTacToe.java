@@ -24,6 +24,7 @@ public class TicTacToe {
         System.out.println("   0 1 2");
     }
 
+
     private static void play() {
         initBoard();
         displayBoard(board);
@@ -72,6 +73,7 @@ public class TicTacToe {
     }
 
     public static boolean checkWinner(char[][] moveArray, char player) {
+
         return (moveArray[0][0] == player && moveArray[0][1] == player && moveArray[0][2] == player) ||
                 (moveArray[1][0] == player && moveArray[1][1] == player && moveArray[1][2] == player) ||
                 (moveArray[2][0] == player && moveArray[2][1] == player && moveArray[2][2] == player) ||
